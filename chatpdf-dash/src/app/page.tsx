@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { UserButton, auth } from "@clerk/nextjs";
+import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const { userId } = await auth()
+  const isAuth = !!userId
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
 
@@ -9,8 +12,15 @@ export default function Home() {
         <div>
           <h4>Powered by DashSquared</h4>
         </div>
-        <div>
-          <Button className="justified centered">My Chats</Button>
+        <div className="flex mt-2">
+          {isAuth && <Button className="justified centered">My Chats</Button>}
+        </div>
+
+        <div className="w-full mt-4">
+          {isAuth ? (
+          <h1>File Upload</h1>
+            ):(<Link href="/sign-in">Login to Get Started</Link>)
+          }
         </div>
       </div>
     </main>
