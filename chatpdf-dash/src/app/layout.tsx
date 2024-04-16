@@ -28,16 +28,16 @@ export default function RootLayout({
 
         <body className={inter.className}>
         
-        <div>
-          <h1>PDF-Chad</h1>
-            <SignedIn>
-              {/* Mount the UserButton component */}
-            <UserButton />
-            </SignedIn>
-            <SignedOut>
-              {/* Signed out users get sign in button */}
-            <SignInButton/>
-          </SignedOut>
+        <div className="py-3 px-5 block">
+          <h1 className="py-2 text-3xl font-semibold">PDF-Chad</h1>
+              <SignedIn>
+                {/* Mount the UserButton component */}
+              <UserButton  afterSignOutUrl="/"/>
+              </SignedIn>
+              <SignedOut>
+                {/* Signed out users get sign in button */}
+              <SignInButton/>
+              </SignedOut>
           </div>
 
 
