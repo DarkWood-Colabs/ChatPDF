@@ -11,7 +11,7 @@ export default {
     dbCredentials: {
         connectionString: process.env.DATABASE_URL!,
     }
-} satisfies Config
+} satisfies Config;
 
 // npx drizzle-kit push:pg  
 // ^^  -> Makes Sure Neon DB is Synced up with Schema
