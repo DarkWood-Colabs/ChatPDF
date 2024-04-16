@@ -14,27 +14,22 @@ export default async function Home() {
             <h1 className="mr-5 text-5xl font-semibold">
               Chat with Any PDF
             </h1>
+            <div className="flex mt-2 ">
 
-            <div className="flex mt-2 "></div>
-
-
-                    <div className="flex mt-3 justify-center">
-                      {isAuth && <Button className="mt-1 justify-center">Got To Chats</Button>}
-                    </div>
-
-                    <p className="py-1">
-                      Enjoy a Cup of Coffee with your Documents. <br></br>
-                      Data Acquisition with your <b>Business-Chad</b>, without having to <u>DIG!</u>
-                    </p>
-
-                    <div className="w-full mt-4">
-                      {isAuth ? (
-                        <><FileUpload /><h1>File Upload</h1></>
-                        ):(<Link href="/sign-in"> <Button>Login to Get Started</Button></Link>)
-                      }
-                    </div>
-
-
+              <div className="flex mt-3 justify-center">
+                {isAuth && <Button className="mt-1 justify-center">Got To Chats</Button>}
+              </div>
+              <p className="py-1">
+                Enjoy a Cup of Coffee with your Documents. <br></br>
+                Data Acquisition with your <b>Business-Chad</b>, without having to <u>DIG!</u>
+              </p>
+              <div className="w-full mt-4">
+                {isAuth ? 
+                  (<><FileUpload /><h1>File Upload</h1></>):
+                  (<Link href="/sign-in"><Button>Login to Get Started</Button></Link>)
+                }
+              </div>
+            </div>
           </div>
         </div>
       </div>
